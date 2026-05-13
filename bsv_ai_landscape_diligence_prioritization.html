@@ -306,62 +306,6 @@
       white-space: nowrap;
     }
 
-    .style-lab {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin: 14px 0 0;
-      padding: 12px 14px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: color-mix(in srgb, var(--panel) 82%, transparent);
-      box-shadow: 0 12px 32px rgba(31, 27, 20, 0.05);
-    }
-
-    .style-lab-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 260px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 850;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .style-lab-title::before {
-      content: "";
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--teal), var(--clay) 52%, var(--gold));
-      box-shadow: 0 0 0 4px color-mix(in srgb, var(--teal-soft) 72%, transparent);
-    }
-
-    .style-controls {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .style-controls label {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .style-controls select {
-      min-width: 174px;
-      padding: 7px 10px;
-      font-size: 13px;
-    }
-
     body[data-theme] .framework-card,
     body[data-theme] .layer-cake,
     body[data-theme] .controls,
@@ -518,6 +462,35 @@
       font-size: 13px;
     }
 
+    .thinking-process {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 18px;
+      align-items: start;
+      margin: 0 0 16px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--teal);
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--panel) 86%, transparent);
+      box-shadow: 0 12px 30px rgba(31, 27, 20, 0.05);
+    }
+
+    .thinking-process strong {
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .thinking-process p {
+      margin: 0;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
     section {
       margin-top: 32px;
       padding-top: 22px;
@@ -657,12 +630,13 @@
       color: var(--paper);
       font-family: var(--serif);
       font-size: 19px;
-      font-weight: 700;
+      font-weight: 500;
     }
 
     .cake-layer h3 {
       margin: 0 0 6px;
       font-size: 17px;
+      font-weight: 400;
       line-height: 1.2;
     }
 
@@ -687,7 +661,7 @@
       background: rgba(255, 253, 247, 0.74);
       color: #4a463f;
       font-size: 11px;
-      font-weight: 800;
+      font-weight: 400;
     }
 
     .chip-list {
@@ -707,7 +681,7 @@
       background: var(--panel-2);
       color: #312f2b;
       font-size: 11px;
-      font-weight: 750;
+      font-weight: 400;
       cursor: default;
     }
 
@@ -732,7 +706,7 @@
       background: rgba(23, 22, 21, 0.88);
       color: #fffdf7;
       font-size: 10px;
-      font-weight: 850;
+      font-weight: 500;
     }
 
     .chart-framework {
@@ -1430,7 +1404,7 @@
     }
   </style>
 </head>
-<body data-theme="folio" data-font="editorial">
+<body data-theme="folio" data-font="scholar">
   <div class="shell">
     <header class="topbar">
       <div class="mark">
@@ -1448,31 +1422,6 @@
         <a href="#details">Company Cards</a>
       </nav>
     </header>
-
-    <div class="style-lab" aria-label="Look and feel controls">
-      <div class="style-lab-title">Look and feel lab</div>
-      <div class="style-controls">
-        <label for="themeSelect">Theme
-          <select id="themeSelect">
-            <option value="folio">Folio Paper</option>
-            <option value="slate">Slate Studio</option>
-            <option value="cobalt">Cobalt Briefing</option>
-            <option value="obsidian">Obsidian Boardroom</option>
-            <option value="plum">Plum Editorial</option>
-          </select>
-        </label>
-        <label for="fontSelect">Font
-          <select id="fontSelect">
-            <option value="editorial">Editorial Serif</option>
-            <option value="scholar">Scholar Humanist</option>
-            <option value="modern">Modern Sans</option>
-            <option value="technical">Technical Mono</option>
-            <option value="condensed">Condensed Brief</option>
-          </select>
-        </label>
-        <button type="button" id="resetStyle">Reset</button>
-      </div>
-    </div>
 
     <main>
       <section class="hero" aria-labelledby="page-title">
@@ -1493,6 +1442,12 @@
           </div>
           <p class="section-note">
             Short on-screen, not shallow: each score tests portfolio fit, stack position, value capture, company quality, and next-step learnability.
+          </p>
+        </div>
+        <div class="thinking-process">
+          <strong>My thinking process</strong>
+          <p>
+            I first mapped BSV's existing AI portfolio into a five-layer AI stack, then placed the provided companies into that same system. The ranking reflects where deeper diligence could produce the most useful learning: important AI-stack nodes, interdependence with BSV's portfolio, standalone company quality, and value-capture risk.
           </p>
         </div>
         <div class="framework-grid">
@@ -2087,24 +2042,24 @@
 
     const diligenceQuestions = [
       {
-        theme: "Why this company first?",
-        question: "What makes the next diligence hour more valuable here than with the other seven companies?",
-        reveals: "Separates urgency, uncertainty, and real upside."
+        theme: "Stack node vs. company",
+        question: "Is this an important AI-stack node, a durable business, or both?",
+        reveals: "Separates system importance from venture durability."
       },
       {
-        theme: "Control point or feature?",
-        question: "If model providers or platforms absorb the obvious feature, what durable layer remains?",
-        reveals: "Tests whether this can become infrastructure, not a temporary patch."
+        theme: "Absorption risk",
+        question: "If the obvious feature gets absorbed by model providers, hyperscalers, open-source frameworks, or incumbents, what durable layer remains?",
+        reveals: "Tests whether the company has more than a temporary product gap."
       },
       {
-        theme: "System dependency",
-        question: "Which downstream AI workflows would break, slow down, or become more expensive without this company?",
-        reveals: "Tests systems centrality and portfolio interdependence."
+        theme: "Wedge quality",
+        question: "Does this company own a real wedge into distribution, data, workflow ownership, or switching costs?",
+        reveals: "Tests whether the product has a path to defensibility."
       },
       {
-        theme: "Value capture",
-        question: "Who pays, who depends on it, and does that dependency create pricing power or switching cost?",
-        reveals: "Tests whether usefulness can become venture-scale economics."
+        theme: "Model progress",
+        question: "Would this company still matter if model capabilities improved sharply?",
+        reveals: "Tests whether the thesis survives rapid capability improvement."
       },
       {
         theme: "BSV edge",
@@ -2112,9 +2067,9 @@
         reveals: "Tests whether this is specifically a BSV-relevant diligence target."
       },
       {
-        theme: "Kill evidence",
-        question: "What evidence would most quickly make us downgrade the company?",
-        reveals: "Forces honesty around absorption risk, weak adoption, poor retention, or unclear buyer urgency."
+        theme: "Conviction breaker",
+        question: "What evidence would most quickly change or weaken my conviction?",
+        reveals: "Forces honesty about what would change the ranking."
       }
     ];
 
@@ -2148,19 +2103,11 @@
       return getComputedStyle(document.body).getPropertyValue(name).trim();
     }
 
-    function applyLookAndFeel(theme, font) {
-      document.body.dataset.theme = theme;
-      document.body.dataset.font = font;
-      document.getElementById("themeSelect").value = theme;
-      document.getElementById("fontSelect").value = font;
-      localStorage.setItem("bsvTheme", theme);
-      localStorage.setItem("bsvFont", font);
-    }
-
     function initLookAndFeel() {
-      const theme = localStorage.getItem("bsvTheme") || "folio";
-      const font = localStorage.getItem("bsvFont") || "editorial";
-      applyLookAndFeel(theme, font);
+      document.body.dataset.theme = "folio";
+      document.body.dataset.font = "scholar";
+      localStorage.removeItem("bsvTheme");
+      localStorage.removeItem("bsvFont");
     }
 
     function getStackLayer(name) {
@@ -2675,18 +2622,6 @@
       document.getElementById("layerFilter").addEventListener("change", renderLandscape);
       document.getElementById("tableLayerFilter").addEventListener("change", renderRankingTable);
       document.getElementById("tableGtmFilter").addEventListener("change", renderRankingTable);
-      document.getElementById("themeSelect").addEventListener("change", (event) => {
-        applyLookAndFeel(event.target.value, document.getElementById("fontSelect").value);
-        renderGraph();
-      });
-      document.getElementById("fontSelect").addEventListener("change", (event) => {
-        applyLookAndFeel(document.getElementById("themeSelect").value, event.target.value);
-        renderGraph();
-      });
-      document.getElementById("resetStyle").addEventListener("click", () => {
-        applyLookAndFeel("folio", "editorial");
-        renderGraph();
-      });
 
       document.querySelectorAll("th[data-sort]").forEach((th) => {
         th.addEventListener("click", () => {
