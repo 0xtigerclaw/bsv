@@ -528,6 +528,38 @@
       line-height: 1.25;
     }
 
+    .importance-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 0 0 30px;
+    }
+
+    .importance-item {
+      padding: 14px 15px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--panel) 86%, transparent);
+      box-shadow: 0 12px 30px rgba(31, 27, 20, 0.05);
+    }
+
+    .importance-item strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--teal);
+      font-size: 11px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    .importance-item span {
+      display: block;
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
     .framework-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -1519,13 +1551,13 @@
           <p class="kicker">AI landscape · portfolio management · systems thinking</p>
           <h1 id="page-title">BSV AI diligence map</h1>
           <p class="hero-copy">
-            Eight companies ranked by portfolio edge, AI-system centrality, and diligence leverage. GTM support is annotated separately.
+            A portfolio-management map for deciding where BSV should spend scarce diligence time across the AI stack. GTM support is annotated, not allowed to dominate the ranking.
           </p>
         </div>
         <aside class="thesis-box">
           <h2>Decision frame</h2>
           <p>
-            Prioritize the company where BSV has the clearest reason to dig deeper now.
+            Best next diligence target = strong company + important AI-stack node + portfolio leverage BSV can act on.
           </p>
           <div class="hero-stats">
             <div class="stat">
@@ -1544,6 +1576,21 @@
         </aside>
       </section>
 
+      <div class="importance-strip" aria-label="Why this exercise matters">
+        <div class="importance-item">
+          <strong>Why it matters</strong>
+          <span>Partner time is scarce; the ranking decides where deeper diligence should start.</span>
+        </div>
+        <div class="importance-item">
+          <strong>What the map adds</strong>
+          <span>It shows interdependence, not just categories, so portfolio compounding is visible.</span>
+        </div>
+        <div class="importance-item">
+          <strong>What it is not</strong>
+          <span>A final investment decision before product testing, buyer work, and funding context.</span>
+        </div>
+      </div>
+
       <section id="framework">
         <div class="section-head">
           <div>
@@ -1551,7 +1598,7 @@
             <h2>Diligence Rationale Framework</h2>
           </div>
           <p class="section-note">
-            Five tests keep the ranking explicit: portfolio fit, stack position, value capture, company quality, and next-step learnability.
+            Short on-screen, not shallow: each score tests portfolio fit, stack position, value capture, company quality, and next-step learnability.
           </p>
         </div>
         <div class="framework-grid">
@@ -1624,7 +1671,7 @@
             <h2>Portfolio Interdependence Visualization</h2>
           </div>
           <p class="section-note">
-            Click a node to inspect role, BSV relevance, and dependency edges.
+            The key question: which companies become more valuable because other portfolio nodes depend on them?
           </p>
         </div>
         <div class="chart-framework" id="chartFramework"></div>
@@ -1649,7 +1696,7 @@
             <h2>Diligence-Priority Ranking</h2>
           </div>
           <p class="section-note">
-            Ranking answers: where should BSV spend diligence next? GTM leverage is separate.
+            Ranking answers where BSV should spend diligence next. GTM leverage is kept separate to protect the investment judgment.
           </p>
         </div>
         <div class="controls" aria-label="Ranking filters">
@@ -1692,7 +1739,7 @@
             <h2>Expandable Diligence Cards</h2>
           </div>
           <p class="section-note">
-            Full rationale stays behind the cards to keep the main page scannable.
+            Full rationale stays behind the cards so the page remains scannable without losing diligence depth.
           </p>
         </div>
         <div class="cards-grid" id="companyCards"></div>
