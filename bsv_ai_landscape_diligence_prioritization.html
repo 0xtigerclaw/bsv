@@ -362,7 +362,6 @@
       font-size: 13px;
     }
 
-    body[data-theme] .thesis-box,
     body[data-theme] .framework-card,
     body[data-theme] .layer-cake,
     body[data-theme] .controls,
@@ -381,7 +380,6 @@
       color: var(--ink);
     }
 
-    body[data-theme] .stat,
     body[data-theme] .metric,
     body[data-theme] .detail-block,
     body[data-theme] .cake-layer,
@@ -394,7 +392,6 @@
     }
 
     body[data-theme] .hero-copy,
-    body[data-theme] .thesis-box p,
     body[data-theme] .framework-card p,
     body[data-theme] .section-note,
     body[data-theme] .cake-layer p,
@@ -413,7 +410,6 @@
     }
 
     body[data-theme] .version,
-    body[data-theme] .stat span,
     body[data-theme] label,
     body[data-theme] .metric strong,
     body[data-theme] .relation-list h4,
@@ -454,10 +450,6 @@
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 32px;
-      align-items: end;
       padding: 42px 0 30px;
     }
 
@@ -473,91 +465,9 @@
 
     .hero-copy {
       margin: 14px 0 0;
-      max-width: 610px;
+      max-width: 760px;
       color: #3b3934;
       font-size: 16px;
-    }
-
-    .thesis-box {
-      padding: 18px;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-    }
-
-    .thesis-box h2 {
-      margin: 0 0 12px;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.11em;
-      color: var(--teal);
-    }
-
-    .thesis-box p {
-      margin: 0;
-      font-size: 15px;
-      color: #34312d;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .stat {
-      padding: 13px 12px;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      background: var(--panel-2);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 22px;
-      line-height: 1;
-    }
-
-    .stat span {
-      display: block;
-      margin-top: 5px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.25;
-    }
-
-    .importance-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin: 0 0 30px;
-    }
-
-    .importance-item {
-      padding: 14px 15px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: color-mix(in srgb, var(--panel) 86%, transparent);
-      box-shadow: 0 12px 30px rgba(31, 27, 20, 0.05);
-    }
-
-    .importance-item strong {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--teal);
-      font-size: 11px;
-      font-weight: 850;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-    }
-
-    .importance-item span {
-      display: block;
-      color: var(--ink);
-      font-size: 13px;
-      line-height: 1.35;
     }
 
     .framework-grid {
@@ -1347,28 +1257,47 @@
     }
 
     .question {
-      min-height: 86px;
-      padding: 13px;
+      min-height: 156px;
+      padding: 15px;
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 8px;
       position: relative;
     }
 
-    .question span {
+    .question-number {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       color: var(--clay);
       font-family: var(--serif);
-      font-size: 22px;
+      font-size: 21px;
       line-height: 1;
       font-weight: 700;
     }
 
-    .question p {
+    .question h3 {
+      margin: 0 0 8px;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .question-text {
       margin: 0;
-      color: #302e2a;
-      font-size: 13px;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .question-reveals {
+      margin: 10px 0 0;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
     }
 
     .framework-questions {
@@ -1554,42 +1483,7 @@
             A portfolio-management map for deciding where BSV should spend scarce diligence time across the AI stack. GTM support is annotated, not allowed to dominate the ranking.
           </p>
         </div>
-        <aside class="thesis-box">
-          <h2>Decision frame</h2>
-          <p>
-            Best next diligence target = strong company + important AI-stack node + portfolio leverage BSV can act on.
-          </p>
-          <div class="hero-stats">
-            <div class="stat">
-              <strong>8</strong>
-              <span>ranked companies</span>
-            </div>
-            <div class="stat">
-              <strong>5</strong>
-              <span>AI layers</span>
-            </div>
-            <div class="stat">
-              <strong>5</strong>
-              <span>diligence criteria</span>
-            </div>
-          </div>
-        </aside>
       </section>
-
-      <div class="importance-strip" aria-label="Why this exercise matters">
-        <div class="importance-item">
-          <strong>Why it matters</strong>
-          <span>Partner time is scarce; the ranking decides where deeper diligence should start.</span>
-        </div>
-        <div class="importance-item">
-          <strong>What the map adds</strong>
-          <span>It shows interdependence, not just categories, so portfolio compounding is visible.</span>
-        </div>
-        <div class="importance-item">
-          <strong>What it is not</strong>
-          <span>A final investment decision before product testing, buyer work, and funding context.</span>
-        </div>
-      </div>
 
       <section id="framework">
         <div class="section-head">
@@ -1635,7 +1529,7 @@
             <h2>Key Diligence Questions</h2>
             </div>
             <p class="section-note">
-              Pressure tests before selecting the company for deeper work.
+              These questions force the ranking to defend why one company deserves the next diligence cycle before the others.
             </p>
           </div>
           <div class="question-grid" id="questionGrid"></div>
@@ -2192,12 +2086,36 @@
     ];
 
     const diligenceQuestions = [
-      "AI-stack node, durable business, or both?",
-      "Who could absorb it?",
-      "Temporary gap or lasting control point?",
-      "Where is the wedge: data, workflow, distribution, switching cost?",
-      "Still matter if models get much better?",
-      "What evidence would change the ranking?"
+      {
+        theme: "Why this company first?",
+        question: "What makes the next diligence hour more valuable here than with the other seven companies?",
+        reveals: "Separates urgency, uncertainty, and real upside."
+      },
+      {
+        theme: "Control point or feature?",
+        question: "If model providers or platforms absorb the obvious feature, what durable layer remains?",
+        reveals: "Tests whether this can become infrastructure, not a temporary patch."
+      },
+      {
+        theme: "System dependency",
+        question: "Which downstream AI workflows would break, slow down, or become more expensive without this company?",
+        reveals: "Tests systems centrality and portfolio interdependence."
+      },
+      {
+        theme: "Value capture",
+        question: "Who pays, who depends on it, and does that dependency create pricing power or switching cost?",
+        reveals: "Tests whether usefulness can become venture-scale economics."
+      },
+      {
+        theme: "BSV edge",
+        question: "What can BSV uniquely understand, test, or unlock because of its existing AI portfolio?",
+        reveals: "Tests whether this is specifically a BSV-relevant diligence target."
+      },
+      {
+        theme: "Kill evidence",
+        question: "What evidence would most quickly make us downgrade the company?",
+        reveals: "Forces honesty around absorption risk, weak adoption, poor retention, or unclear buyer urgency."
+      }
     ];
 
     const gtmLevels = ["All", "High", "Medium-High", "Medium", "Low"];
@@ -2743,10 +2661,12 @@
 
     function renderQuestions() {
       const container = document.getElementById("questionGrid");
-      container.innerHTML = diligenceQuestions.map((question, index) => `
+      container.innerHTML = diligenceQuestions.map((item, index) => `
         <article class="question">
-          <span>${String(index + 1).padStart(2, "0")}</span>
-          <p>${question}</p>
+          <span class="question-number">${String(index + 1).padStart(2, "0")}</span>
+          <h3>${item.theme}</h3>
+          <p class="question-text">${item.question}</p>
+          <p class="question-reveals">${item.reveals}</p>
         </article>
       `).join("");
     }
